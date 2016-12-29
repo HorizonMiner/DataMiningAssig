@@ -43,3 +43,37 @@ dataset$movie_title[1:10]
 # Genres and plot keywords for the first four rows in this dataset
 print("Genres and plot keywords for the first four rows in this dataset:")
 dataset[1:4, c("genres", "plot_keywords")]
+
+## Issue 5
+## There are duplicates in the dataset.
+
+# Number of duplicates
+print("Number of duplicates:")
+sum(duplicated(dataset)) # yields 45
+
+## Issue 6
+## There are duplicate movie titles. However, it cannot be removed completely
+## since there may be different directors with the same movie title or 
+## different number of user votes.
+
+# Number of duplicate movie titles
+print("Number of duplicate movie titles:")
+sum(duplicated(dataset$movie_title)) # yields 126
+
+# Number of duplicate movie titles with director
+print("Number of duplicate movie titles with director:")
+sum(duplicated(dataset[,c("movie_title", "director_name")])) # yields 124
+# This shows us that there are 2 movies with the same title but with different
+# directors.
+
+# Number of duplicate movie titles with number of voted users
+print("Number of duplicate movie titles with number of voted users:")
+sum(duplicated(dataset[,c("movie_title", "num_voted_users")])) # yields 47
+# This shows us there are 79 movies with the same title but with different
+# votes.
+
+## Issue 7
+## Column order in dataset is random.
+print("Sixth variable to eighth variable:")
+names(dataset)[6:8]
+# This shows that column order is random.
