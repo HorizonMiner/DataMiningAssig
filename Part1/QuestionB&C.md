@@ -3,7 +3,7 @@
 ```r
 plot(x = dataset$title_year, y = dataset$movie_facebook_likes, xlab = "Year", ylab = "Facebook Likes", main = "Facebook Likes against Year", type = "l")
 ```
-![alt text](imageurl "Facebook Likes against Year")
+![alt text]("https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/images/FbLikesAgainstYear.png")
 This plot shows that older movies clearly have less facebook likes and recent movies have the most facebook likes.
 
 ## C. Relevant Data Mining Techniques
