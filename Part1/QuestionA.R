@@ -1,26 +1,12 @@
-source(file="setup.R")
-source(file="function.R")
+# Question A - Description of Dataset
 
-# load dataset
-print("loading dataset...")
-loadDataSetFromZip()
+# Load dataset
+dataset <- read.csv("dataset/movie_metadata.csv")
 
-# Number of rows.
-print("number of rows : ")
-dim(dataset)
+# 1. Number of observations and variables
+print("Number of observations and variables:")
+dim(dataset) # yields 5043 28
 
-# Names of variables
-print("Names of variables in this dataset : ")
+# 2. Names of variables
+print("Names of variables:")
 names(dataset)
-
-# Number of Empty Cells
-print("Number of empty cells in this dataset : ")
-numEmptyCellsInDataFrame(dataset)
-
-# Number of Weird HTML Tags
-print("Number of Weird HTML Tags : ")
-numOfHTMLTag(dataset)
-
-# Number of NA
-print("Number of NA in this dataset : ")
-numNACellsInDataFrame(dataset)
