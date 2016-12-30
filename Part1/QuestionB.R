@@ -186,3 +186,61 @@ ggplot(meanGrossForGenre, aes(x = genre_count)) +
 # 1. Predict the next movie genre by the director
 # 2. Predict the gross of the next movie by the director
 # 3. Predict the popularity of the next movie by the director based on gross
+
+## Fourth Insight
+
+# Step 1： Create data frame with columns: actor 1's name, mean IMDB score and number of rating for actor 1
+print("Create data frame with columns: actor 1's name, mean IMDB score and number of rating for actor 1.")
+actorRating <- data.frame(actor_1 = unique(dataset$actor_1_name), mean_score = 0, num_of_rating = 0, stringsAsFactors = F)
+
+# Step 2： Assign mean IMDB score and number of rating to each unique actor 1 accordingly
+print("Assign mean IMDB score and number of rating to each unique actor 1 accordingly.")
+i <- 1
+for (name in actorRating$actor_1){
+  actorRating$mean_score[i] = mean(dataset$imdb_score[dataset$actor_1_name == name], na.rm=T)
+  actorRating$num_of_rating[i] = length(na.omit(dataset$imdb_score[dataset$actor_1_name == name]))
+  i <- i + 1
+}
+
+# Step 3： Get actors wtih more than twenty movie participation
+print("Get actors wtih more than twenty movie participation.")
+topNumOfRating <- actorRating[actorRating$num_of_rating > 20, ]
+topNumOfRating <- topNumOfRating[order(topNumOfRating$mean_score, decreasing = T), ]
+
+# Step 4: Plot a bar chart to show mean rating for the actor 1 against actor 1's name
+print("Plot a bar chart to show mean rating for the actor 1 against actor 1's name.")
+library(ggplot2)
+ggplot(topNumOfRating, aes(x = reorder(topNumOfRating$actor_1, -topNumOfRating$mean_score), y = topNumOfRating$mean_score)) + 
+		geom_bar(stat = "identity", colour = rainbow(26)) + 
+		theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+		ggtitle("Top Rated Actors with Movie Participated > 20") +
+  		labs(x="Actor 1's Name",y="Mean Rating")
+
+## Fifth insight
+
+# Step 1： Create data frame with columns: directors' name, mean imdb score and number of rating for the director
+print("Create data frame with columns: directors' name, mean imdb score and number of rating for the director.")
+directorRating <- data.frame(director = unique(dataset$director_name), mean_score = 0, num_of_rating = 0, stringsAsFactors = F)
+
+# Step 2： Assign mean IMDB score and number of rating to each unique director accordingly
+print("Assign mean IMDB score and number of rating to each unique director accordingly.")
+i <- 1
+for (name in directorRating$director){
+  directorRating$mean_score[i] = mean(dataset$imdb_score[dataset$director_name == name], na.rm=T)
+  directorRating$num_of_rating[i] = length(na.omit(dataset$imdb_score[dataset$director_name == name]))
+  i <- i + 1
+}
+
+# Step 3： Get top 20 directors with most movie made
+print("Get top 20 directors with most movie made.")
+topNumOfDirRating <- directorRating[1:20, ]
+topNumOfDirRating <- topNumOfDirRating[order(topNumOfDirRating$mean_score, decreasing = T), ]
+
+# Step 4: Plot a bar chart of mean rating for the director against directors's name
+print("Plot a bar chart of mean rating for the director against directors's name.")
+library(ggplot2)
+ggplot(topNumOfDirRating, aes(x = reorder(topNumOfDirRating$director, -topNumOfDirRating$mean_score), y = topNumOfDirRating$mean_score)) + 
+		geom_bar(stat = "identity", colour = rainbow(20)) + 
+		theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+		ggtitle("Top 20 Most Movies Made Director") +
+  		labs(x="Directors' Name",y="Mean Rating")
