@@ -215,6 +215,9 @@ ggplot(topNumOfRating, aes(x = reorder(topNumOfRating$actor_1, -topNumOfRating$m
 		theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
 		ggtitle("Top Rated Actors with Movie Participated > 20") +
   		labs(x="Actor 1's Name",y="Mean Rating")
+# 1. We may use this to predict the rating for the next movie by the actor 1.
+# 2. Studio or director can employ actor with good performance based on their 
+# rating to make better profit for their own.
 
 ## Fifth insight
 
@@ -244,3 +247,7 @@ ggplot(topNumOfDirRating, aes(x = reorder(topNumOfDirRating$director, -topNumOfD
 		theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
 		ggtitle("Top 20 Most Movies Made Director") +
   		labs(x="Directors' Name",y="Mean Rating")
+# 1. We may use this to predict the rating and quality of the next movie by 
+# the director.
+# 2. Audience can spend smartly on the movie based on the prediction since 
+# they will have more confidence on the next movie.
