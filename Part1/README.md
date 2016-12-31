@@ -255,7 +255,7 @@ ggplot(meanGrossForGenre, aes(x = genre_count)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
     ```r
 
-    ![Top 20 Profitable Directors](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/images/Top20ProfitableDirector.png)
+![Top 20 Profitable Directors](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/images/Top20ProfitableDirector.png)
 
    * We may use this to (1) predict the next movie genre by the director, (2) predict the gross of the next movie by the director and (3) predict the popularity of the next movie by the director based on gross
 
