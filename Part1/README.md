@@ -245,7 +245,7 @@ meanGrossForGenre$mean_gross <- round(meanGrossForGenre$mean_gross, 0)
 
    * 4b: Plot of number of genres agaisnt genre count for top 20 profitable directors
 
-    ```r
+    ```
 ggplot(meanGrossForGenre, aes(x = genre_count)) + 
   facet_wrap(~director + mean_gross, labeller = label_context) +
   geom_bar(aes(fill = genre)) +
@@ -253,9 +253,9 @@ ggplot(meanGrossForGenre, aes(x = genre_count)) +
   ylab("Genre's Number by Director") +
   ggtitle("Top 20 Profitable Director") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
-    ```r
+    ```
 
-![Top 20 Profitable Directors](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/images/Top20ProfitableDirector.png)
+    ![Top 20 Profitable Directors](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/images/Top20ProfitableDirector.png)
 
    * We may use this to (1) predict the next movie genre by the director, (2) predict the gross of the next movie by the director and (3) predict the popularity of the next movie by the director based on gross
 
