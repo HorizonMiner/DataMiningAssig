@@ -22,4 +22,4 @@ dim(receiptSparse) # [1] 1000    9
 colnames(receiptBinary) <- c("ReceiptIndex", "ChocolateCake", "LemonCake", "CasinoCake", "OperaCake", "StrawberryCake", "TruffleCake", "ChocolateEclair", "CoffeeEclair", "VanillaEclair", "NapoleonCake", "AlmondTart", "ApplePie", "AppleTart", "ApricotTart", "BerryTart", "BlackberryTart", "BlueberryTart", "ChocolateTart", "CherryTart", "LemonTart", "PecanTart", "GanacheCookie", "GongolaisCookie", "RaspberryCookie", "LemonCookie", "ChocolateMeringue", "VanillaMeringue", "MarzipanCookie", "TuileCookie", "WalnutCookie", "AlmondCroissant", "AppleCroissant", "ApricotCroissant", "CheeseCroissant", "ChocolateCroissant", "ApricotDanish", "AppleDanish", "AlmondTwist", "AlmondBearClaw", "BlueberryDanish", "LemonLemonade", "RaspberryLemonade", "OrangeJuie", "GreenTea", "BottledWater", "HotCoffee", "ChocolateCoffee", "VanillaFrappuccino", "CherrySoda", "SingleEspresso")
 
 # Add headers to columns in dataset.
-colnames(itemsTable) <- c("ReceiptIndex", "ItemIndex", "ItemQuantity")
+colnames(itemsTable) <- c("ReceiptIndex", "ItemQuantity", "ItemIndex")
