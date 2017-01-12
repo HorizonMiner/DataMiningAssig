@@ -2,7 +2,7 @@
 
 ## Read Dataset
 # Read 1000-out1.csv
-receiptSparse <- read.csv("1000-out1.csv", stringsAsFactors = F, header = F)
+receiptSparse <- read.csv("1000-out1.csv", stringsAsFactors = F, header = F) # R will read the columns incorrectly
 dim(receiptSparse) # [1] 1048    7
 
 # Read 1000-out2.csv
