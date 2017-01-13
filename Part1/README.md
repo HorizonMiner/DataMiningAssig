@@ -1,3 +1,9 @@
+# Group Members
+1. Khor Kia Kin 1142701883
+2. Ng Chin Ann 1142701684
+3. Kirthivaasan Puniamurthy 1142702268
+4. Ng Chen Hon 1132702936
+
 # Setup
 1. To load dataset:
 
