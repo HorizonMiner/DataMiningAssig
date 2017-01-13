@@ -5,8 +5,8 @@ library(arulesViz)
 
 ## 4. Association rules with top drink occurrence/quantity (HotCoffee)
 hotCoffeeRulesTrans <- as(receiptBinary, "transactions")
-hotCoffeeRules <- apriori(hotCoffeeRulesTrans, parameter= list(minlen=2, target="rules", supp=0.001, conf=0.02), appearance = list(default="rhs",lhs=c("HotCoffee")))
-inspect(hotCoffee)
+hotCoffeeRules <- apriori(hotCoffeeRulesTrans, parameter= list(minlen=2, target="rules", supp=0.01, conf=0.02), appearance = list(default="rhs",lhs=c("HotCoffee")))
+inspect(hotCoffeeRules)
 
 # Sorted by lift
 quality(hotCoffeeRules) <- round(quality(hotCoffeeRules), digits=2)
