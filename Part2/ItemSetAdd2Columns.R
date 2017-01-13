@@ -1,11 +1,13 @@
-
+ItemNames = c()
 
 #################################################################################################################
 initFoodName = function()
 {
-  ItemNames = colnames(receiptBinary)[2:51]
+  ItemNames = colnames(receiptBinary)[1:50]
   ItemNames
 }
+
+ItemNames = initFoodName()
 
 getFoodNamesBasedOnIndex = function(index)
 {
@@ -49,7 +51,7 @@ categorize = function(vector)
 
 addFoodCategoryAsColumn = function()
 {
-  itemsTable$FoodCategory = categorize(addFoodCategoryAsColumn())
+  itemsTable$FoodCategory = categorize(itemsTable$FoodName)
   itemsTable
 }
 
