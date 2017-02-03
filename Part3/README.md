@@ -290,6 +290,14 @@ Decision Tree with Pruning | 0.00000 | 0.9147 | 0.0000 | 0.00000 | 0.92537 | 0.8
 Naive Bayes | 0.317940 | 0.6680 | 0.25135 | 0.47100 | 0.95149 | 0.7439 | 0.47419 | 0.42563 | 0.71294
 ANN | 0.41208 | 0.7974 | 0.42643 | 0.37935 | 0.96020 | 0.9268 | 0.63745 | 0.9010 | 0.86318
 
+### 4.4.3 True Negative Rate (TNR) / Specificity
+Classifier \ Class | Class_1 | Class_2 | Class_3 | Class_4 | Class_5 | Class_6 | Class_7 | Class_8 | Class_9
+--- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+Decision Tree without Pruning | 1.00000 | 0.6793 | 1.0000 | 1.00000 | 0.99212 | 0.9806 | 1.00000 | 0.8684 | 0.98489
+Decision Tree with Pruning | 1.00000 | 0.6668 | 1.0000 | 1.00000 | 0.99212 | 0.9806 | 1.00000 | 0.8684 | 0.98717
+Naive Bayes | 0.960613 | 0.8600 | 0.94420 | 0.92967 | 0.92725 | 0.9873 | 0.96757 | 0.99037 | 0.95783
+ANN | 0.99044 | 0.8672 | 0.93368 | 0.99136 | 0.99792 | 0.9825 | 0.98748 | 0.9813 | 0.98284
+
 ## 5. Suggestions as to why the classifiers behave differently
 Overall, accuracy is not so high as the training set is not large enough. 
 
