@@ -7,6 +7,7 @@ library(rpart) # rpart, printcp, prune
 library(e1071) # naiveBayes
 library(nnet) # nnet
 library(caret) # confusionMatrix
+library(pROC) # multiclass.roc
 library(devtools) # source_url
 
 # =========================
@@ -20,7 +21,7 @@ dataset <- read.csv(file = "dataset/train.csv", header = TRUE, stringsAsFactors 
 dim(dataset) # 61878    95
 
 # Content of train set:
-dataset[1:6,1:5, with =F]
+dataset[1:6,1:5]
 
 # Importance of features
 featureImpTrain <- data.frame(features = colnames(dataset)[1:93], count = colSums((dataset)[1:93]))
@@ -137,3 +138,8 @@ ann.predict <- predict(ann.model, test[1:93], type = "class")
 # Confusion Matrix
 confusionMatrix(ann.predict, test$target)
 # Accuracy : 0.7672
+
+# ROC
+ann.predict2 <- predict(ann.model, test[1:93], type="raw")
+multi.class <- multiclass.roc(test$target, ann.predict2[,1])
+auc(multi.class)
