@@ -16,6 +16,12 @@ library(devtools) # source_url
 # Read dataset
 dataset <- read.csv(file = "dataset/train.csv", header = TRUE, stringsAsFactors = FALSE)
 
+# Dimension of train set:
+dim(dataset) # 61878    95
+
+# Content of train set:
+dataset[1:6,1:5, with =F]
+
 # Importance of features
 featureImpTrain <- data.frame(features = colnames(dataset)[1:93], count = colSums((dataset)[1:93]))
 ggplot(featureImpTrain, aes(x = reorder(features, count), y = count)) + 
