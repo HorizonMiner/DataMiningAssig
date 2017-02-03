@@ -1,3 +1,9 @@
+# Group Members
+1. Khor Kia Kin 1142701883
+2. Ng Chin Ann 1142701684
+3. Kirthivaasan Puniamurthy 1142702268
+4. Ng Chen Hon 1132702936
+
 # 1. Exploratory Data Analysis
 The dataset chosen is from Kaggle, provided by Otto Group. The dataset contains 93 features which for more than 200, 000 products, separated into train and test set. Here, we only focus on the train set because the target of classification is provided for accuracy checking. The train set will be subset into training set and testing set with ratio 7:3.
 
