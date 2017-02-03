@@ -9,6 +9,8 @@ Repo for TDS3301 Data Mining Assignment.
 
 ## TOC
 1. [Part 1 Report](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part1/README.md)
+2. [Part 2 Report](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part2/README.md)
+3. [Part 3 Report](https://github.com/HorizonMiner/DataMiningAssig/blob/master/Part3/README.md)
 
 ## Link
 - [Trello Discussion Board](https://trello.com/b/CQ31v1m9/assignment)
